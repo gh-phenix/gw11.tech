@@ -1,0 +1,181 @@
+---
+layout: default
+title: Home
+---
+
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item is-active" href="/" target="_blank" rel="noreferrer noopener">
+        <em class="fab fa-microsoft fa-2x mr-3"></em>
+        <span>Get Windows 11</span>
+      </a>
+      <a class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" role="button">
+        <span aria-hidden="true" class="has-text-white"></span>
+        <span aria-hidden="true" class="has-text-white"></span>
+        <span aria-hidden="true" class="has-text-white"></span>
+      </a>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a href="https://github.com/TheBobPony/getwindows11.tech" target="_blank" rel="noreferrer noopener" class="navbar-item">
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer noopener" class="navbar-item">
+          <span>DMCA</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Landing hero -->
+<section class="hero is-fullheight is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column has-text-left">
+          <p class="title">Get Windows 11</p>
+          <p class="subtitle">Mirrors to download the leaked Windows 11 build.</p>
+        </div>
+        <div class="column is-narrow is-hidden-mobile">
+          <em class="fab fa-microsoft fa-10x" style="color: #0078d9"></em>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Disclaimer -->
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-full has-text-centered">
+          <p class="title">Notice</p>
+          <p class="subtitle">
+            We are not associated with Microsoft and are not responsible for any damages done. Continue at your own risk.
+          </p>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column has-text-centered">
+          <p class="title">Spot a broken mirror?</p>
+          <p class="subtitle">
+            Be sure you report it on our <a href="/github/" target="_blank" rel="noreferrer noopener" class="has-text-primary">GitHub</a>.
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="title">Want to add a mirror?</p>
+          <p class="subtitle">
+            Add it using our <a href="/github/" target="_blank" rel="noreferrer noopener" class="has-text-primary">GitHub</a> issue
+            template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main content -->
+<section class="section content is-size-5">
+  <div class="container">
+    <!-- Priority Mirrors -->
+    <p class="title">Priority Mirrors</p>
+    <p class="subtitle">These mirrors are maintained by us or guaranteed to be online.</p>
+
+    <ul>
+      <!-- Cycles through the links -->
+      {% for mirror in site.mirrors %}
+
+      <!-- Hoisted links loop -->
+      {% if mirror.hoist == true %}
+      <li>
+        <a href="{{ mirror.download_url }}" target="_blank" rel="noreferrer noopener">{{ mirror.download_title }}</a>
+
+        <!-- Contributor -->
+        {% if mirror.contributor %}
+        <span>(by {{ mirror.contributor }})</span>
+        {% endif %}
+
+        <!-- Notes -->
+        {% if mirror.notes %}
+        <span>({{ mirror.notes }})</span>
+        {% endif %}
+
+        <!-- End loop -->
+        {%endif %} {% endfor %}
+      </li>
+    </ul>
+
+    <!-- Torrents -->
+    <p class="title">Torrents &amp; Magnets</p>
+    <p class="subtitle">You must use a <a href="https://www.qbittorrent.org/">BitTorrent client</a> to use these mirrors.</p>
+
+    <ul>
+      <!-- Torrent links loop -->
+      {% for mirror in site.mirrors %}
+
+      <!-- If the mirror is a torrent -->
+      {% if mirror.torrent == true %}
+      <li>
+        <a href="{{ mirror.download_url }}" target="_blank" rel="noreferrer noopener">{{ mirror.download_title }}</a>
+
+        <!-- Contributor -->
+        {% if mirror.contributor %}
+        <span>(by {{ mirror.contributor }})</span>
+        {% endif %}
+
+        <!-- Notes -->
+        {% if mirror.notes %}
+        <span>({{ mirror.notes }})</span>
+        {% endif %}
+      </li>
+
+      <!-- End loop 2 -->
+      {% endif %} {% endfor %}
+    </ul>
+
+    <!-- General mirrors -->
+    <p class="title">General Mirrors</p>
+    <p class="subtitle">These mirrors are all community contributed.</p>
+
+    <ul>
+      <!-- Cycles through the rest of the links -->
+      {% for mirror in site.mirrors %}
+
+      <!-- Make sure it's not already looped through -->
+      {% if mirror.hoist != true and mirror.torrent != true %}
+      <li>
+        <a href="{{ mirror.download_url }}" target="_blank" rel="noreferrer noopener">{{ mirror.download_title }}</a>
+
+        <!-- Contributor -->
+        {% if mirror.contributor %}
+        <span>(by {{ mirror.contributor }})</span>
+        {% endif %}
+
+        <!-- Notes -->
+        {% if mirror.notes %}
+        <span>({{ mirror.notes }})</span>
+        {% endif %}
+      </li>
+
+      <!-- End general loop -->
+      {% endif %} {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer has-text-centered is-size-5 p-6">
+  <p>
+    GetWindows11, made with <em class="fas fa-heart fa-sm" style="color: red"></em> by
+    <a href="https://espi.me" target="_blank" rel="noreferrer noopener">sysdotini</a>,
+    <a href="https://bobpony.com" target="_blank" rel="noreferrer noopener">Bob Pony</a>, and
+    <a href="/github/" target="_blank" rel="noreferrer noopener">contributors</a>.
+  </p>
+  <p>Windows (and the logo) is a registered trademark of Microsoft Corporation.</p>
+</footer>
