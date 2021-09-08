@@ -42,8 +42,8 @@ The Get Windows 11 website is licensed under the GNU AGPL-3.0 or later. For more
 
 [homepage]: https://getwindows11.tech "Get Windows 11's homepage"
 [leak-info]: https://web.archive.org/web/20210618175206/https://www.theverge.com/2021/6/15/22535123/microsoft-windows-11-leak-screenshots-start-menu "Windows 11 leak info"
-[mirror-template]: https://github.com/TheBobPony/getwindows11.tech/blob/main/.github/ISSUE_TEMPLATE/new-mirror.md "Mirror template"
-[broken-mirror]: https://github.com/TheBobPony/getwindows11.tech/blob/main/.github/ISSUE_TEMPLATE/broken-mirror.md "Report a broken mirror"
+[mirror-template]: https://github.com/gh-phenix/gw11.tech/blob/main/.github/ISSUE_TEMPLATE/new-mirror.md "Mirror template"
+[broken-mirror]: https://github.com/gh-phenix/gw11.tech/blob/main/.github/ISSUE_TEMPLATE/broken-mirror.md "Report a broken mirror"
 [license]: LICENSE "GNU AGPL-3.0"
-[contributing]: https://github.com/TheBobPony/getwindows11.tech/blob/main/.github/CONTRIBUTING.md "Contribution guide"
+[contributing]: https://github.com/gh-phenix/gw11.tech/blob/main/.github/CONTRIBUTING.md "Contribution guide"
 

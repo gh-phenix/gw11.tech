@@ -1,17 +1,11 @@
 title: Get Windows 11
 description: Mirrors to download the leaked Windows 11 build.
 permalink: /blog/:year/:title/
-url: https://getwindows11.tech
+url: https://gh-phenix.github.io/gw11.tech
 logo: /assets/img/favicon.png
 
-twitter:
-  username: TheBobPony
-  card: summary
-
 socials:
-  github: TheBobPony
-  twitter: TheBobPony
-  twitter_domain: getwindows11.tech
+  github: gh-phenixh
 
 compress_html:
   comments: all
